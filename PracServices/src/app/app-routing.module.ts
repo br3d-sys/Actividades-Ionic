@@ -8,8 +8,16 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'albums',
     pathMatch: 'full'
+  },
+  {
+    path: 'albums',
+    loadChildren: () => import('./albums/albums.module').then( m => m.AlbumsPageModule)
+  },
+  {
+    path: 'album/:id',
+    loadChildren: () => import('./album/album.module').then( m => m.AlbumPageModule)
   },
 ];
 

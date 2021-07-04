@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Fotografía</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/albums">
+
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card *ngIf="info">
+    <ion-card-header>
+      <p>Album Fotográfico:  {{info.albumId}}</p>
+      <p>{{info.title}}</p>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-img src="{{info.url}}"></ion-img>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>
