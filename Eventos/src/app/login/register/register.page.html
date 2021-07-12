@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registrar Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid style="height: 100%;">
+    <ion-row style="display:flex; align-items: center; height:100%;">
+      <ion-col>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit($event)">
+
+          <ion-img class="ion-padding-bottom" src="assets/svg/img_svg.svg" ></ion-img>
+
+          <ion-list>
+            <ion-item>
+              <ion-label position="floating" class="ion-margin-top">Usuario</ion-label>
+              <ion-input formControlName="userEmail" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating" class="ion-margin-top">Contraseña</ion-label>
+              <ion-input  formControlName="userPassword" type="text"></ion-input>
+            </ion-item>
+          </ion-list>
+
+          <ion-button type="submit" expand="block" class="ion-margin-top">Registrar</ion-button>
+          <p>Ya tienes una Cuenta? <a routerLink="/register">Iniciar Sesion</a></p>
+          <p>Olvidaste tu contraseña? <a routerLink="/recovery">Registrate</a></p>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

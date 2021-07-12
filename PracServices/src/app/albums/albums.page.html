@@ -9,7 +9,7 @@
       <ion-item button *ngFor="let album of (result|async)" [routerLink]="['/','album',album.id]">
         <ion-grid>
           <ion-row class="ion-align-items-center">
-            <ion-col size="3" >
+            <ion-col size="3">
               <div>
                 <ion-img src="{{album.url}}"></ion-img>
               </div>

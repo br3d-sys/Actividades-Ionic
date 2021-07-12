@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-title>Song Detail</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/list">
+        </ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h3>{{(song|async)?.songName}}</h3>
+  <p>Artista: {{(song|async)?.artistName}}</p>
+  <p>Descripcion: {{(song|async)?.songDescription}}</p>
+  <p>Album: {{(song|async)?.albumName}}</p>
+  <ion-button (click)="deleteSong()" expand="block" shape="round">
+    Eliminar
+  </ion-button>
+  <ion-button routerLink="/update/{{(song|async)?.id}}" expand="block" shape="round">
+    Actualizar
+  </ion-button>
+</ion-content>

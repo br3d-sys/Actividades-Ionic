@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/start">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Lista de Eventos</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/create">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-list-header>
+      <ion-label>
+        Tus Próximos Eventos
+      </ion-label>
+    </ion-list-header>
+    <ion-item tappable *ngFor="let evento of eventList" [routerLink]="['/','detail',5]">
+        <ion-label>
+          <h3>{{evento?.name}}</h3>
+          <p>Tiquet: <strong>{{evento?.price}}</strong></p>
+          <p>Fecha: <strong>{{evento?.date}}</strong></p>
+        </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
